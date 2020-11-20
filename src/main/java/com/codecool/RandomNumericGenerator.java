@@ -21,9 +21,14 @@ public class RandomNumericGenerator {
         return "'" + String.format("%.00f", Math.random()*(99-10)+10) + "-" + String.format("%.00f", Math.random()*(999-100)+100) + "'";
     }
 
-    protected String randomNumberGenerator(){
-        return String.valueOf(random.nextInt(100));
+    protected String randomNumberGenerator(int bound){
+        return String.valueOf(random.nextInt(bound));
     }
+
+    protected String randomNumberGenerator(int bound, int start){
+        return String.valueOf(random.nextInt(bound) + start);
+    }
+
 
     protected String randomPhoneGenerator(){
         return String.format("%.00f", Math.random()*(999-100)+100) + "-" +
